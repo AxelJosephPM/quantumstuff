@@ -177,11 +177,11 @@ def caso_barrera():
 
     sigma = 1.0
     x0    = -5.0
-    k0    = 8.0  # más rápido → impacto antes
+    k0    = 6.0  # más rápido → impacto antes
     psi0  = np.exp(-(x-x0)**2/(2*sigma**2)) * np.exp(1j*k0*x)
     psi0 /= np.sqrt(np.sum(np.abs(psi0)**2)*dx)
 
-    dt, Tmax = 5e-6, 0.6
+    dt, Tmax = 5e-6, 0.5
     Nt = int(Tmax/dt)
 
     psi_list, t_list = evolve(psi0, Vx, x, dt, Nt, units, save_every=5000)
